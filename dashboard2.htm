@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta name="robots" content="noindex" /><!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>公務出國報告資訊網</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- slick css-->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/hyui.css">
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon">
+    <!-- highlight -->
+    <!-- <link rel="stylesheet" href="vendor/highlight/github-gist.css"> -->
+</head>
+
+<body>
+    <!-- wrapper Start -->
+    <div class="wrapper">
+        <!-- header load header.htm -->
+        <header></header>
+        <!-- aside load aside.htm -->
+        <aside></aside>
+        <!-- main Start -->
+        <!-- 主要內容區 -->
+        <div class="content mp">
+            <section class="main">
+                <!-- <h2 class="title">意見信箱</h2> -->
+                <!-- 儀表板 -->
+                <div class="dashboard">
+                    <h3 class="dashboardTitle">儀表板</h3>
+                    <h4>待辦事項</h4>
+                    <div class="table_operating table_list _flex">
+                        <table cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <th>點收作業</th>
+                                    <td class="title">待點收</td>
+                                    <td class="point">
+                                        <a href="#" class="counter" data-target="11">9</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <th>提醒作業</th>
+                                    <td class="title">返國日後30天以上未登入系統的件數</td>
+                                    <td class="point">
+                                        <a href="#" class="counter" data-target="11">9</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4>待催繳件數(含上級機關未點收)</h4>
+                    <div class="table_operating table_list _flex">
+                        <table cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <th rowspan="2">即將到期 / <br />已逾期件數</th>
+                                    <td class="title">即將到期(本月)</td>
+                                    <td class="point">
+                                        <a href="#" class="counter" data-target="11">0</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">已逾期(近一年)</td>
+                                    <td class="point"><a href="#" class="counter" data-target="2">0</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <a href="javascript:;" class="scrollToTop">回頁首</a>
+    <!-- JQ -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- 外掛 plugin js -->
+    <script src="vendor/jquery.easing.min.js"></script><!-- ease -->
+    <script src="vendor/slick/slick.min.js "></script><!-- slick -->
+    <script src="vendor/slick/slick-lightbox.js "></script><!-- slick lightbox -->
+    <script src="vendor/lazyload/lazyload.js"></script><!-- lazyload -->
+    <script src="vendor/picturefill/picturefill.min.js" async></script><!-- picturefill -->
+    <script src="vendor/scrolltable/jquery.scroltable.min.js"></script><!-- scrolltable -->
+    <script src="vendor/enquire/enquire.js"></script><!-- query js -->
+    <!-- highlight -->
+    <!-- <script src="vendor/highlight/highlight.pack.js"></script> -->
+    <!-- <script>
+        hljs.initHighlightingOnLoad();
+    </script> -->
+    <!-- highchart plugin -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+
+    <script>
+        var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+        // 長條圖1
+        Highcharts.chart('line1', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: '2020/06/01~2020/12/31'
+            },
+            colors: _Color,
+            xAxis: {
+                categories: ['小白菜', '小芥菜', '木瓜', '胡蘿蔔', '結球白菜'],
+                labels: {
+                    style: { fontSize:'16px' }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total fruit consumption'
+                }
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+            series: [{
+                name: '貼標出貨量(公斤)',
+                data: [0, 900, 1400, 1000, 750]
+            }, {
+                name: '未貼標出貨量(公斤)',
+                data: [1500, 750, 0, 0, 0]
+            }]
+        });
+        // 長條圖2
+        Highcharts.chart('line2', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: '圖表標題(可省略)'
+            },
+            colors: _Color,
+            xAxis: {
+                categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas'],
+                labels: {
+                    style: { fontSize:'16px' }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total fruit consumption'
+                }
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+            series: [{
+                name: 'John',
+                data: [5, 3, 4, 7, 2]
+            }, {
+                name: 'Jane',
+                data: [2, 2, 3, 2, 1]
+            }, {
+                name: 'Joe',
+                data: [3, 4, 4, 2, 5]
+            }]
+        });
+        // pie
+        Highcharts.chart('pie1', {
+          chart: { type: 'variablepie' },
+          title: { text: '圖表標題(可省略)' },
+          colors: _Color,
+          tooltip: {
+            headerFormat: '',
+            pointFormat: '<span>\u25CF</span> <b> {point.name}</b><br/>' +
+              '項目: <b>{point.y}</b>項<br/>'
+          },
+          series: [{
+            minPointSize: 60,
+            innerSize: '60%',
+            zMin: 0,
+            name: 'countries',
+            data: [{
+              name: '通過驗證',
+              y: 20
+            }, {
+              name: '未驗證',
+              y: 15
+            }]
+          }]
+        });
+        Highcharts.chart('pie2', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: { text: '圖表標題(可省略)' },
+            colors: _Color,
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            // colors: _Color,
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: 'Brands',
+                colorByPoint: true,
+                data: [{
+                    name: 'Chrome',
+                    y: 61.41,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Internet Explorer',
+                    y: 11.84
+                }, {
+                    name: 'Firefox',
+                    y: 10.85
+                }, {
+                    name: 'Edge',
+                    y: 4.67
+                }, {
+                    name: 'Safari',
+                    y: 4.18
+                }, {
+                    name: 'Other',
+                    y: 7.05
+                }]
+            }]
+        });
+    </script>
+
+    <script>
+        $('header').load("header.htm");
+        $('aside').load("aside.htm");
+    </script>
+    <!-- hyUI -->
+    <!-- <script src="js/hyui.js"></script> -->
+    <!-- 客製js -->
+    <script src="js/customize.js"></script>
+</body>
+
+</html>
