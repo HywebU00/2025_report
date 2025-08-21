@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta name="robots" content="noindex" /><!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="vendor/wow/animate.min.css"><!-- animate -->
+    <link rel="stylesheet" href="css/hyui.css"><!-- hyUI css -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon"><!-- favicon -->
+</head>
+
+<body id="Login">
+    <!-- wrapper Start -->
+    <div class="wrapper">
+        <!-- 主要內容區 -->
+        <div class="content">
+            <div class="container">
+                <h1><a href="#"><img src="images/logo-login.svg" alt="公務出國報告資訊網"></a></h1>
+                <section class="login-box">
+                    <form action="">
+                        <div class="flex-form">
+                            <div class="form_grp">
+                                <label class="form_title">請選擇身分別：</label>
+                                <div class="form_content">
+                                    <div class="radio_grp form_inline">
+                                        <label><input type="radio" name="sampleRadio6" value="" checked="">專責人員</label>
+                                        <label><input type="radio" name="sampleRadio6" value="">出國人員</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_grp warn">
+                                <label for="" class="form_title">帳號：</label>
+                                <div class="form_content">
+                                    <input name="" type="text" placeholder="請輸入文字" class="lost">
+                                    <div class="notice_error">錯誤</div>
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                                <label for="" class="form_title">密碼：</label>
+                                <div class="form_content">
+                                    <input name="" type="password" placeholder="請輸入密碼">
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                                <div class="form_title">驗證碼：</div>
+                                <div class="form_content form_inline">
+                                    <input name="" type="text" placeholder="請輸入驗證碼">
+                                    <img src="images/basic/captcha.gif" alt="" class="captcha">
+                                    <button class="btn-refresh" type="button">重新整理</button>
+                                </div>
+                            </div>
+                            <div class="btn_grp">
+                                <input name="" type="submit" value="登入" class="btn btn-submit" />
+                            </div>
+                        </div>
+                    </form>
+                    <div class="login_notice">
+                        <p>專責人員忘記密碼時，請點選 [ 重設密碼 ]</p>
+                        <p>出國人員忘記帳號或通行碼時，請洽詢機關專責人員 [ 民眾端連結 ]</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <ol>
+                    <li>配合101年1月1日起行政院组織啟動時程，各新機關人員自新機關組織法施行日期起，如需新增出國計畫，請使用新帳號登入。</li>
+                    <li>原機關之舊帳號将停用新增出國計畫功能，惟仍可進行101年1月1日以前出國案件維護等作業。</li>
+                    <li>密隔設定原則:密碼長度至少8碼(含),最長12碼(含)，必須包含大/小寫英文、數字及特殊字元其中3項，且密碼不可包含使用者帳號名稱全名;變更密碼不可與最近3次密碼重複，每180天需變更1次，不便之處，敬請見諒。※出國人員請依出國報告新增通知信件中之帳號密碼登入。</li>
+                    <li>出國人員請依出國報告新增通知信件中之帳號密碼登入。</li>
+                </ol>
+                <div class="footerInfo">
+                    如對本站有任何問題或意見，歡迎聯絡客服，電話：(02)23956966分機3980， <a href="#">聯絡信箱</a><br>
+                    國家發展委員會連絡窗口，電話：02-2316-5300分機6653，<a href="#">聯絡信箱</a><br>
+                    國家發展委員會地址：10020台北市中正區寶慶路3號，電話：02-2316-5300
+                </div>
+            </div>
+        </footer>
+    </div>
+    <a href="javascript:;" class="scrollToTop">回頁首</a>
+    <!-- JQ -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- 外掛 plugin js -->
+    <script src="vendor/jquery.easing.min.js"></script><!-- ease -->
+    <script src="vendor/lazyload/lazyload.js"></script><!-- lazyload -->
+    <!-- wow-->
+    <script src="vendor/wow/wow.min.js"></script>
+    <!-- 客製js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>
