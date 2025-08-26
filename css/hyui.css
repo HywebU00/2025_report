@@ -14103,6 +14103,9 @@ body#Login, body#Contact {
   max-width: calc(100% - 136px);
 }
 @media screen and (max-width: 767px) {
+  #Login .flex-form .form_grp .form_content.form_inline input {
+    width: 100%;
+  }
   #Login .btn_grp {
     justify-content: center;
   }
