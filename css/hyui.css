@@ -14036,6 +14036,7 @@ body#Login, body#Contact {
 #Login form input[type=password] {
   border-radius: 30px;
   padding: 12px 24px;
+  margin: 0.3em 0;
 }
 #Login form .forgetPW {
   text-align: right;
@@ -14090,12 +14091,24 @@ body#Login, body#Contact {
   background-size: 22px;
   border-color: transparent;
 }
+#Login .btn_grp {
+  justify-content: flex-end;
+}
 #Login .btn-submit {
   background: #222;
   color: #fff;
   font-size: 1.125em;
   padding: 12px 24px;
   border-radius: 30px;
+  max-width: calc(100% - 136px);
+}
+@media screen and (max-width: 767px) {
+  #Login .btn_grp {
+    justify-content: center;
+  }
+  #Login .btn-submit {
+    max-width: 100%;
+  }
 }
 
 .slick-slider {
