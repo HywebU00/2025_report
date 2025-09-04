@@ -736,6 +736,7 @@ kbd kbd {
   background: #666;
   border: 1px solid #666;
   color: #FFF;
+  word-break: keep-all;
 }
 .btn-delete:hover, .btn-delete:focus {
   background: rgb(76.5, 76.5, 76.5);
@@ -826,8 +827,8 @@ a.moveBtn:hover {
   border: solid 1px #6d3c67 !important;
 }
 .btn-primary:hover, .btn-primary:focus {
-  background: rgb(76.1065088757, 41.8934911243, 71.9171597633) !important;
-  border: solid 1px #6d3c67 !important;
+  background: #de3fa1 !important;
+  border: solid 1px #de3fa1 !important;
 }
 
 .btn-secondary {

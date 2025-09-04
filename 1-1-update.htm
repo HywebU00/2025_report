@@ -12,12 +12,35 @@
         <script src="js/respond.min.js"></script>
     <![endif]-->
     <!-- slick css-->
+    <link href="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.10/dist/antd.min.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
     <!-- hyUI css -->
     <link rel="stylesheet" href="css/hyui.css">
     <!-- favicon -->
     <link href="images/favicon.png" rel="icon" type="image/x-icon">
+    <!-- vue cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <!-- antd cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.10/dist/antd.min.js"></script>
+    <style>
+        .progress-bar {
+            height: 20px;
+            width: 0%;
+            background-color: #4caf50;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+
+        .progress-container {
+            background-color: #f3f3f3;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
@@ -114,7 +137,7 @@
                             <label for="" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>計畫主辦機關：</label>
                             <div class="form_content form_inline">
                                 <input name="" type="text" placeholder="國家發展委員會" size="20" value="國家發展委員會">
-                                <button type="button" class="btn btn-primary"><i class="i_edit_a2"></i>更改主辦機關</button>
+                                <button type="button" class="btn btn-primary" id="openModal"><i class="i_edit_a2"></i>更改主辦機關</button>
                             </div>
                         </div>
                         <div class="form_grp">
@@ -152,8 +175,10 @@
                         <div class="form_grp">
                             <label for="" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>前往地區：</label>
                             <div class="form_content">
-                                <input name="" type="text" size="20" value="日本🅇 韓國🅇">
-                                <div class="notice_info"><a href="https://vue-search-select.netlify.app/#/multi" target="_blank">demo</a></div>
+                                <!--input name="email" type="text" size="20" value="日本🅇 韓國🅇"-->
+                                <div id="demo" style="width:100%;">
+                                    <a-select v-model:value="selectedValue" mode="multiple" style="width: 100%;font-size:15px;" placeholder="請搜尋或選擇前往地區" :max-tag-text-length="maxTagTextLength" :options="selectOptions"></a-select>
+                                </div>
                             </div>
                         </div>
                         <div class="form_grp">
@@ -250,7 +275,7 @@
                         </div>
                         <div class="form_grp">
                             <label for="" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>施政分類：</label>
-                            <div class="form_content">
+                            <div class="form_content form_inline">
                                 <input name="email" type="text" value="教育及體育" readonly><button class="btn-primary"><i class="i_search2"></i>瀏覽</button>
                             </div>
                         </div>
@@ -303,6 +328,7 @@
                             <label class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr> 電子全文檔：</label>
                             <div class="form_content form_inline">
                                 <button type="button" class="btn btn-primary"><i class="i_add2"></i>新增電子全文檔</button>
+                                <input type="file" id="avatar" name="avatar" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
                                 <div class="notice_info">所有電子檔案請以PDF或ODF格式上傳 請再次確認上傳檔案內容之正確性及完整性</div>
                                 <table class="table_hover">
                                     <tr>
@@ -321,7 +347,6 @@
                                             <a href="#" class="moveBtn">⭣</a>
                                         </td>
                                         <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
                                             <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
                                         </td>
                                     </tr>
@@ -334,7 +359,6 @@
                                             <a href="#" class="moveBtn">⭣</a>
                                         </td>
                                         <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
                                             <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
                                         </td>
                                     </tr>
@@ -346,6 +370,7 @@
                             <label class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>出國報告審核表：</label>
                             <div class="form_content form_inline">
                                 <button type="button" class="btn btn-primary"><i class="i_add2"></i>新增出國報告審核表</button>
+                                <input type="file" id="avatar2" name="avatar" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
                                 <div class="notice_info">所有電子檔案請以PDF或ODF格式上傳 (須上傳已奉首長或其授權人員核定之審核表)</div>
                                 <table class="table_hover">
                                     <tr>
@@ -364,7 +389,6 @@
                                             <a href="#" class="moveBtn">⭣</a>
                                         </td>
                                         <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
                                             <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
                                         </td>
                                     </tr>
@@ -519,6 +543,195 @@
     <!--popup start-->
     <div id="modal" class="modal">
         <h2>新增/編輯出國人員</h2>
+        <section>
+            <!--h3 class="sub_title">申請驗證</h3-->
+            <div class="tabSet2 cards">
+                    <section class="tabs"> 
+                        <div class="tabItem">
+                            <h4 class="active"><a href="javascript:;"><b>查詢機關</b></a></h4>
+                            <h4 class=""><a href="javascript:;"><b>瀏覽機關</b></a></h4>
+                            <h4 class=""><a href="javascript:;"><b>停用機關</b></a></h4>
+                        </div>
+                        <div class="tabContent">
+                            <div class="box show">
+                                <div class="flex-form form_grid">
+                                    <div class="form_grp">
+                                    <label for="address" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>請輸入機關代碼、機關名稱或簡稱：</label>
+                                    <div class="form_content form_inline">
+                                        <input name="email" type="text"  placeholder="請輸入姓名" value="A41000000G">
+                                        <input type="button" name="" value="查詢" class="btn btn-primary">
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table_hover">
+                                <tr>
+                                    <th>選取</th>
+                                    <th>機關代碼</th>
+                                    <th>機關全稱</th>
+                                    <th>授權類別</th>
+                                    <th>啟用狀態</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>A41000000G</td>
+                                    <td>國家發展委員會</td>
+                                    <td></td>
+                                    <td>啟用</td>
+                                </tr>
+                            </table>
+                            <!--div align="center"><input type="button" name="" value="確定" class="btn btn-primary"></div-->
+                            <p>備註：授權類別中，註記「承續」者，代表貴機關以往的名稱或代碼；註記「代理」者，代表貴機關有權限去維護資料的機關，例如代管或暫時權理者。</p>
+                            <p><b>瀏覽機關模式</b><br>點選<input type="radio" checked> 即選擇該機關；點選機關連結可瀏覽其所屬機關。</p>
+                                    <table class="table_hover">
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>200000000A 總統府</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>300000000A 行政院</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td>400000000A 立法院</td>
+                                            <td><input type="radio"></td>
+                                            <td><a>500000000F 司法院</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>600000000A 考試院</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>700000000A 監察院</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>800000001A 國家安全會議</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A00000000A 行政院（組改新機關）</a></td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <p><b>中央政府>行政院（組改新機關）</b><br>點選<input type="radio" checked>即選擇該機關；點選機關連結可瀏覽其所屬機關。</p>
+                                    <table class="table_hover">
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td>A00020000A 不當黨產處理委員會</td>
+                                            <td><input type="radio"></td>
+                                            <td>00030000H 國家運輸安全調查委員會</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A00040000G 核能安全委員會</a></td>
+                                            <td><input type="radio"></td>
+                                            <td>A00050000G 個人資料保護委員會籌備處</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A01000000A 內政部</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A03000000B 外交部</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A05000000C 國防部</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A07000000D 財政部</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A09000000E 教育部</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A11000000F 法務部</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A13000000G 經濟部</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A15000000H 交通部</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A17000000J 勞動部</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A19000000G 農業部</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A21000000I 衛生福利部</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A23000000I 環境部</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A25000000E 文化部</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A29000000G 數位發展部</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A41000000G 國家發展委員會</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A42000000G 國家科學及技術委員會</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A43000000A 大陸委員會</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A45000000D 金融監督管理委員會</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A47000000C 海洋委員會</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A49000000B 僑務委員會</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A51000000A 國軍退除役官兵輔導委員會</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A53000000A 原住民族委員會</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A55000000A 客家委員會</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A57000000A 行政院主計總處</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A58000000A 行政院人事行政總處</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A59000000N 中央銀行</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A60000000E 國立故宮博物院</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A61000000A 中央選舉委員會</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A62000000G 公平交易委員會</a></td>
+                                            <td><input type="radio"></td>
+                                            <td><a>A63000000H 國家通訊傳播委員會</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio"></td>
+                                            <td><a>A65000000A 促進轉型正義委員會</a></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                            </div>
+                            <div class="box">
+                                <!-- tab 2 內容-->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+        </section>
+    </div>
+    <!-- <div id="modal" class="modal">
+        <h2>新增/編輯出國人員</h2>
         <div class="flex-form form_grid">
             <div class="form_grp">
                 <label for="" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>姓名：</label>
@@ -588,7 +801,7 @@
         <div align="center">
             <button type="button" class="btn btn-blue">新增</button>
         </div>
-    </div>
+    </div> -->
 
     <script>
         function addRow() {
