@@ -121,7 +121,7 @@
                             <label for="address" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>出國人員：</label>
                             <div class="form_content form_inline">
                                 <button type="button" class="btn btn-primary" onclick="addRow()"><i class="i_add2"></i>新增出國人員</button>
-                                <table class="table_hover scroltable" id="myTable">
+                                <table class="table_hover" id="myTable">
                                     <thead>
                                         <tr>
                                         <th>姓名</th>
@@ -180,91 +180,40 @@
                             </div>
                         </div>
                         <div class="form_grp">
-                            <label for="" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr> 實際使用經費：</label>
+                            <label for="email" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>實際使用經費：</label>
                             <div class="form_content form_inline">
-                                <button type="button" class="btn btn-primary" id="openModal"><i class="i_add2"></i>新增經費來源</button>
+                                <button type="button" class="btn btn-primary"  onclick="addRow2()"><i class="i_add2"></i>新增經費來源</button>
                                 <div class="notice_info">如有多筆經費來源，請分次逐筆新增，俾利系統判讀</div>
-                                <table class="table_hover">
-                                    <tr>
-                                        <th>經費年度</th>
-                                        <th>經費來源</th>
-                                        <th>經費金額(新台幣)<br><span style="font-size: 0.9em;">(例如：出國報告為公假自費時，可輸入0元表示之)</span></th>
-                                        <th width="150">修改/刪除</th>
-                                    </tr>
-                                    <tr>
-                                        <td nowrap="">114年度</td>
-                                        <td>政府經費/本機關/國家發展委員會</td>
-                                        <td align="right">255,360 元</td>
-                                        <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
-                                            <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input name="fundYear" type="text" class="FormTxNum" value="114" size="5" maxlength="3">年度</td>
-                                        <td>
-                                            <select>
-                                                <option>政府經費/其他機關</option>
-                                                <option>政府經費/本機關</option>
-                                                <option>其他單位(基金)經費</option>
-                                            </select>
-                                            <select>
-                                                <option>請輸入機關名稱</option>
-                                            </select>
-                                        </td>
-                                        <td align="right">
-                                            <input name="amount" type="number" value="255360">
-                                        </td>
-                                        <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
-                                            <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
-                                        </td>
-                                    </tr>
+                                <table class="table_hover" id="myTable2">
+                                    <thead>
+                                        <tr>
+                                            <th>經費年度</th>
+                                            <th>經費來源</th>
+                                            <th>經費金額(新台幣)<br><span style="font-size: 0.9em;">(例如：出國報告為公假自費時，可輸入0元表示之)</span></th>
+                                            <th>修改/刪除</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
-
                         <div class="form_grp">
-                            <label for="" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr> 出國計畫預算：</label>
+                            <label for="email" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>出國計畫預算：</label>
                             <div class="form_content form_inline">
-                                <button type="button" class="btn btn-primary" id="openModal"><i class="i_add2"></i>新增經費來源</button>
+                                <button type="button" class="btn btn-primary"  onclick="addRow3()"><i class="i_add2"></i>新增經費來源</button>
                                 <div class="notice_info">如有多筆經費來源，請分次逐筆新增，俾利系統判讀</div>
-                                <table class="table_hover">
-                                    <tr>
-                                        <th>經費年度</th>
-                                        <th>經費種類/來源機關</th>
-                                        <th>經費金額(新台幣)<br><span style="font-size: 0.9em;">(例如：出國報告為公假自費時，可輸入0元表示之)</span></th>
-                                        <th width="150">修改/刪除</th>
-                                    </tr>
-                                    <tr>
-                                        <td nowrap="">114年度</td>
-                                        <td>政府經費/本機關/國家發展委員會</td>
-                                        <td align="right">255,360 元</td>
-                                        <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
-                                            <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input name="fundYear" type="text" class="FormTxNum" value="114" size="5" maxlength="3">年度</td>
-                                        <td>
-                                            <select>
-                                                <option>政府經費/其他機關</option>
-                                                <option>政府經費/本機關</option>
-                                                <option>其他單位(基金)經費</option>
-                                            </select>
-                                            <select>
-                                                <option>請輸入機關名稱</option>
-                                            </select>
-                                        </td>
-                                        <td align="right">
-                                            <input name="amount" type="number" value="255360">
-                                        </td>
-                                        <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
-                                            <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
-                                        </td>
-                                    </tr>
+                                <table class="table_hover scroltable" id="myTable3">
+                                    <thead>
+                                        <tr>
+                                            <th>經費年度</th>
+                                            <th>經費來源</th>
+                                            <th>經費金額(新台幣)<br><span style="font-size: 0.9em;">(例如：出國報告為公假自費時，可輸入0元表示之)</span></th>
+                                            <th>修改/刪除</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -334,39 +283,19 @@
                         <div class="form_grp">
                             <label class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>報告建議事項：</label>
                             <div class="form_content form_inline">
-                                <button type="button" class="btn btn-primary" id="openModal"><i class="i_add2"></i>新增建議事項</button>
+                                <button type="button" class="btn btn-primary" onclick="addRow4()"><i class="i_add2"></i>新增建議事項</button>
                                 <div class="notice_info">建議事項僅需列出建議事項標題，並以新增方式逐項分列</div>
-                                <table class="table_hover">
-                                    <tr>
-                                        <th>建議事項(限100個字以內)</th>
-                                        <th>狀態</th>
-                                        <th>說明</th>
-                                        <th width="150">修改/刪除</th>
-                                    </tr>
-                                    <tr>
-                                        <td nowrap="">關注CD落日後的轉移與整合可能性</td>
-                                        <td align="center">研議中</td>
-                                        <td>說明說明說明</td>
-                                        <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
-                                            <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td nowrap=""><input type="text" size="50" value="有關PPSTI組織章程以及策略計畫更新，涉及分組主席任期及輪替機制，建議我方應持續保持高度參與，引導形成有利於我方的措辭及框架機制，以鞏固並提升在PPSTI的影響力。"></td>
-                                        <td align="center">
-                                            <select>
-                                                <option>研議中</option>
-                                                <option>已採行</option>
-                                                <option>未採行</option>
-                                            </select>
-                                        </td>
-                                        <td><input type="text" value="說明說明說明"></td>
-                                        <td align="center">
-                                            <button type="button"class="btn-primary"><i class="i_edit_a2"></i>修改</button>
-                                            <button type="button" class="btn-delete"><i class="i_close2"></i>刪除</button>
-                                        </td>
-                                    </tr>
+                                <table class="table_hover scroltable" id="myTable4">
+                                    <thead>
+                                        <tr>
+                                            <th>建議事項(限100個字以內)</th>
+                                            <th>狀態</th>
+                                            <th>說明</th>
+                                            <th>修改/刪除</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -685,7 +614,7 @@
                 <input type="text" name="" value=""><br>
                 <input type="checkbox" name="" onclick="alert('只能有一位出國報告聯絡人');">出國報告聯絡人
             </td>
-            <td>
+            <td align="center">
                 <button type="button" class="btn btn-delete" onclick="toggleEdit(this)">完成</button><br>
                 <button type="button" class="btn btn-delete" onclick="deleteRow(this)">刪除</button>
             </td>
@@ -761,9 +690,9 @@
 
             </td>
 
-            <td>
-            <button type="button" class="btn btn-delete" onclick="toggleEdit(this)">完成</button><br>
-            <button type="button" class="btn btn-delete" onclick="deleteRow(this)">刪除</button>
+            <td align="center">
+                <button type="button" class="btn btn-delete" onclick="toggleEdit(this)">完成</button><br>
+                <button type="button" class="btn btn-delete" onclick="deleteRow(this)">刪除</button>
             </td>
             `;
 
@@ -837,9 +766,9 @@
 
                 </td>
 
-                <td>
-                <button type="button" class="btn btn-delete" onclick="toggleEdit(this)">完成</button><br>
-                <button type="button" class="btn btn-delete" onclick="deleteRow(this)">刪除</button>
+                <td align="center">
+                    <button type="button" class="btn btn-delete" onclick="toggleEdit(this)">完成</button><br>
+                    <button type="button" class="btn btn-delete" onclick="deleteRow(this)">刪除</button>
                 </td>
             `;
 
@@ -903,9 +832,9 @@
             </td>
             <td><input type="text" placeholder="請輸建議事項説明"></td>
 
-            <td>
-            <button type="button" class="btn btn-delete" onclick="toggleEdit(this)">完成</button><br>
-            <button type="button" class="btn btn-delete" onclick="deleteRow(this)">刪除</button>
+            <td align="center">
+                <button type="button" class="btn btn-delete" onclick="toggleEdit(this)">完成</button><br>
+                <button type="button" class="btn btn-delete" onclick="deleteRow(this)">刪除</button>
             </td>
             `;
 
